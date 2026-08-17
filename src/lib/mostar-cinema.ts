@@ -43,8 +43,9 @@ export function initMostarCinema(): () => void {
   const setVar = (name: string, value: string) => root.style.setProperty(name, value);
 
   function updateSightSlider() {
-    if (!track || sightCards.length === 0) return;
-    const cardWidth = sightCards[0].offsetWidth;
+    const first = sightCards[0];
+    if (!track || !first) return;
+    const cardWidth = first.offsetWidth;
     const gap = parseFloat(getComputedStyle(track).columnGap || "0") || 0;
     setVar("--sights-shift", `${-(cardWidth + gap) * activeSight}px`);
     sightCards.forEach((card) => {
