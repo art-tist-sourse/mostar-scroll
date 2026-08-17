@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { initMostarCinema } from "@/lib/mostar-cinema";
 
@@ -99,13 +99,15 @@ function Index() {
 
             <header className="site-header" aria-label="Primary navigation">
               <a className="site-logo" href="#cinema">
-                Bosnia and Herzegovina
+                Mostar City
               </a>
               <nav className="site-nav" aria-label="Main menu">
-                <a href="#cinema">Intro</a>
-                <a href="#bridge">Bridge</a>
-                <a href="#bazaar">Bazaar</a>
-                <a href="#routes">Routes</a>
+                <Link to="/bridge">Old Bridge</Link>
+                <Link to="/bazaar">Bazaar</Link>
+                <Link to="/places">Places</Link>
+                <Link to="/itineraries">Itineraries</Link>
+                <Link to="/about">About</Link>
+                <Link to="/auth">Sign in</Link>
               </nav>
               <button className="language-switcher" aria-label="Change language">
                 <span>EN</span>
