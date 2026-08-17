@@ -10,33 +10,114 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BazaarRouteImport } from './routes/bazaar'
+import { Route as BridgeRouteImport } from './routes/bridge'
+import { Route as ItinerariesRouteImport } from './routes/itineraries'
+import { Route as PlacesRouteImport } from './routes/places'
+import { Route as PlacesSlugRouteImport } from './routes/places.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BazaarRoute = BazaarRouteImport.update({
+  id: '/bazaar',
+  path: '/bazaar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BridgeRoute = BridgeRouteImport.update({
+  id: '/bridge',
+  path: '/bridge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ItinerariesRoute = ItinerariesRouteImport.update({
+  id: '/itineraries',
+  path: '/itineraries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlacesRoute = PlacesRouteImport.update({
+  id: '/places',
+  path: '/places',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlacesSlugRoute = PlacesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => PlacesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/bazaar': typeof BazaarRoute
+  '/bridge': typeof BridgeRoute
+  '/itineraries': typeof ItinerariesRoute
+  '/places': typeof PlacesRouteWithChildren
+  '/places/$slug': typeof PlacesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/bazaar': typeof BazaarRoute
+  '/bridge': typeof BridgeRoute
+  '/itineraries': typeof ItinerariesRoute
+  '/places': typeof PlacesRouteWithChildren
+  '/places/$slug': typeof PlacesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/bazaar': typeof BazaarRoute
+  '/bridge': typeof BridgeRoute
+  '/itineraries': typeof ItinerariesRoute
+  '/places': typeof PlacesRouteWithChildren
+  '/places/$slug': typeof PlacesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/bazaar'
+    | '/bridge'
+    | '/itineraries'
+    | '/places'
+    | '/places/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/bazaar'
+    | '/bridge'
+    | '/itineraries'
+    | '/places'
+    | '/places/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/bazaar'
+    | '/bridge'
+    | '/itineraries'
+    | '/places'
+    | '/places/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BazaarRoute: typeof BazaarRoute
+  BridgeRoute: typeof BridgeRoute
+  ItinerariesRoute: typeof ItinerariesRoute
+  PlacesRoute: typeof PlacesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +129,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bazaar': {
+      id: '/bazaar'
+      path: '/bazaar'
+      fullPath: '/bazaar'
+      preLoaderRoute: typeof BazaarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bridge': {
+      id: '/bridge'
+      path: '/bridge'
+      fullPath: '/bridge'
+      preLoaderRoute: typeof BridgeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/itineraries': {
+      id: '/itineraries'
+      path: '/itineraries'
+      fullPath: '/itineraries'
+      preLoaderRoute: typeof ItinerariesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/places': {
+      id: '/places'
+      path: '/places'
+      fullPath: '/places'
+      preLoaderRoute: typeof PlacesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/places/$slug': {
+      id: '/places/$slug'
+      path: '/$slug'
+      fullPath: '/places/$slug'
+      preLoaderRoute: typeof PlacesSlugRouteImport
+      parentRoute: typeof PlacesRoute
+    }
   }
 }
 
+interface PlacesRouteChildren {
+  PlacesSlugRoute: typeof PlacesSlugRoute
+}
+
+const PlacesRouteChildren: PlacesRouteChildren = {
+  PlacesSlugRoute: PlacesSlugRoute,
+}
+
+const PlacesRouteWithChildren =
+  PlacesRoute._addFileChildren(PlacesRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BazaarRoute: BazaarRoute,
+  BridgeRoute: BridgeRoute,
+  ItinerariesRoute: ItinerariesRoute,
+  PlacesRoute: PlacesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
