@@ -57,7 +57,10 @@ function AccountPage() {
 
   async function remove(id: string) {
     const { error } = await supabase.from("saved_places").delete().eq("id", id);
-    if (error) return toast.error(error.message);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
     setRows((prev) => prev.filter((r) => r.id !== id));
   }
 
