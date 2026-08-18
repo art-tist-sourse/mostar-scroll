@@ -30,7 +30,7 @@ function BridgePage() {
   const bridge = PLACES[0]!;
 
   return (
-    <PageShell>
+    <PageShell background={IMAGES.bridge}>
       <PageHero
         kicker="The Old Bridge"
         title="Stari Most"
@@ -46,7 +46,7 @@ function BridgePage() {
         </Link>
       </PageHero>
 
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="mx-auto max-w-6xl w-full px-4 py-12 sm:px-6 sm:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr]">
           <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
             <h2 className="font-display text-3xl text-foreground">The bridge is the city's compass</h2>
@@ -78,7 +78,7 @@ function BridgePage() {
           </dl>
         </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
               title: "The divers",

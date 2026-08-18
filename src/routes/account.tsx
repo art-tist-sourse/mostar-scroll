@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { PageShell } from "@/components/PageShell";
-import { PLACES } from "@/lib/site-content";
+import { IMAGES, PLACES } from "@/lib/site-content";
 
 export const Route = createFileRoute("/account")({
   head: () => ({
@@ -71,12 +71,12 @@ function AccountPage() {
   }
 
   return (
-    <PageShell>
-      <section className="mx-auto max-w-4xl px-5 py-16">
+    <PageShell background={IMAGES.splitLeft}>
+      <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">My trip</p>
-            <h1 className="mt-3 font-display text-4xl">Saved places</h1>
+            <h1 className="mt-3 font-display text-3xl sm:text-4xl">Saved places</h1>
             <p className="mt-2 text-sm text-muted-foreground">{user?.email}</p>
           </div>
           <button

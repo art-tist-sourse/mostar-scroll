@@ -73,11 +73,11 @@ function AuthPage() {
   }
 
   return (
-    <PageShell>
+    <PageShell background={IMAGES.bridge}>
       <section className="relative overflow-hidden">
         <img src={IMAGES.bridge} alt="" className="absolute inset-0 size-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 to-background" />
-        <div className="relative mx-auto max-w-md px-5 py-20">
+        <div className="relative mx-auto max-w-md px-4 py-14 sm:px-6 sm:py-20">
           <div className="rounded-3xl border border-border bg-card/80 p-8 backdrop-blur-xl animate-in fade-in slide-in-from-bottom-4 duration-500">
             <h1 className="font-display text-3xl">
               {mode === "signin" ? "Welcome back" : "Create your account"}
