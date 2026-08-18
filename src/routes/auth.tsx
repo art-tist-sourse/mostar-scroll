@@ -73,7 +73,7 @@ function AuthPage() {
   }
 
   return (
-    <PageShell>
+    <PageShell background={IMAGES.bridge}>
       <section className="relative overflow-hidden">
         <img src={IMAGES.bridge} alt="" className="absolute inset-0 size-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 to-background" />

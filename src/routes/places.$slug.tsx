@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { SavePlaceButton } from "@/components/SavePlaceButton";
-import { PLACES } from "@/lib/site-content";
+import { IMAGES, PLACES } from "@/lib/site-content";
 
 export const Route = createFileRoute("/places/$slug")({
   loader: ({ params }) => {
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/places/$slug")({
 
 function PlaceNotFound() {
   return (
-    <PageShell>
+    <PageShell background={IMAGES.sky}>
       <div className="mx-auto max-w-2xl px-4 py-20 sm:px-6 sm:py-28 text-center">
         <h1 className="font-display text-3xl sm:text-4xl">We don't have that place</h1>
         <p className="mt-4 text-muted-foreground">
@@ -56,7 +56,7 @@ function PlaceDetail() {
   const { place } = Route.useLoaderData();
 
   return (
-    <PageShell>
+    <PageShell background={place.image}>
       <PageHero kicker={place.kicker} title={place.title} copy={place.copy} image={place.image}>
         <SavePlaceButton slug={place.slug} title={place.title} />
         <Link
