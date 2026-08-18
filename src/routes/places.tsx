@@ -38,7 +38,7 @@ function PlacesPage() {
         image={IMAGES.splitRight}
       />
 
-      <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+      <section className="mx-auto w-full max-w-6xl w-full px-4 py-12 sm:px-6 sm:py-16">
         {AREAS.map((area) => {
           const items = PLACES.filter((p) => (p.area ?? "Old city") === area);
           if (items.length === 0) return null;

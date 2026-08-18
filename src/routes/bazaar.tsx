@@ -49,7 +49,7 @@ function BazaarPage() {
   const bazaar = PLACES[1]!;
 
   return (
-    <PageShell>
+    <PageShell background={IMAGES.bazaar}>
       <PageHero
         kicker="Bazaar street"
         title="Kujundziluk"
@@ -65,7 +65,7 @@ function BazaarPage() {
         </Link>
       </PageHero>
 
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="mx-auto max-w-6xl w-full px-4 py-12 sm:px-6 sm:py-16">
         <div className="max-w-3xl space-y-5 text-base leading-relaxed text-muted-foreground">
           <h2 className="font-display text-3xl text-foreground">A lane that never stopped working</h2>
           <p>

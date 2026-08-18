@@ -27,7 +27,7 @@ export const Route = createFileRoute("/itineraries")({
 
 function ItinerariesPage() {
   return (
-    <PageShell>
+    <PageShell background={IMAGES.backFour}>
       <PageHero
         kicker="Routes"
         title="Itineraries"
@@ -42,7 +42,7 @@ function ItinerariesPage() {
         </Link>
       </PageHero>
 
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="mx-auto max-w-6xl w-full px-4 py-12 sm:px-6 sm:py-16">
         <div className="space-y-10">
           {ITINERARIES.map((itinerary) => (
             <article key={itinerary.slug} className="rounded-3xl border border-border bg-card/40 p-8">

@@ -36,8 +36,8 @@ export const Route = createFileRoute("/places/$slug")({
 function PlaceNotFound() {
   return (
     <PageShell>
-      <div className="mx-auto max-w-2xl px-5 py-28 text-center">
-        <h1 className="font-display text-4xl">We don't have that place</h1>
+      <div className="mx-auto max-w-2xl px-4 py-20 sm:px-6 sm:py-28 text-center">
+        <h1 className="font-display text-3xl sm:text-4xl">We don't have that place</h1>
         <p className="mt-4 text-muted-foreground">
           It may have been renamed. Browse the full list of Mostar sights instead.
         </p>
@@ -67,7 +67,7 @@ function PlaceDetail() {
         </Link>
       </PageHero>
 
-      <article className="mx-auto max-w-3xl px-5 py-16">
+      <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
         <dl className="grid gap-4 rounded-3xl border border-border bg-card/50 p-7 sm:grid-cols-3">
           {[
             { term: "Hours", detail: place.hours },

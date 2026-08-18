@@ -27,7 +27,7 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <PageShell>
+    <PageShell background={IMAGES.backFour}>
       <PageHero
         kicker="Bosnia and Herzegovina"
         title="About this guide"
@@ -35,7 +35,7 @@ function AboutPage() {
         image={IMAGES.sky}
       />
 
-      <section className="mx-auto max-w-3xl px-5 py-16">
+      <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
           <h2 className="font-display text-3xl text-foreground">Why Mostar</h2>
           <p>
