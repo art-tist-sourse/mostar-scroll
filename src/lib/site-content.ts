@@ -33,6 +33,7 @@ export type Place = {
   hours: string;
   price: string;
   best: string;
+  area?: string;
   details: string[];
 };
 
