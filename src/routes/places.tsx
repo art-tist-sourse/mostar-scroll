@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { SavePlaceButton } from "@/components/SavePlaceButton";
-import { IMAGES, PLACES } from "@/lib/site-content";
+import { PHOTOS, PLACES } from "@/lib/site-content";
 
 export const Route = createFileRoute("/places")({
   head: () => ({
@@ -18,9 +18,9 @@ export const Route = createFileRoute("/places")({
         content: "Five essential Mostar sights with hours, prices and the best time to arrive.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: IMAGES.splitRight },
+      { property: "og:image", content: PHOTOS.koskiView },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: IMAGES.splitRight },
+      { name: "twitter:image", content: PHOTOS.koskiView },
     ],
   }),
   component: PlacesPage,
@@ -30,12 +30,12 @@ const AREAS = ["Old city", "West bank", "Around Mostar"] as const;
 
 function PlacesPage() {
   return (
-    <PageShell background={IMAGES.bazaar}>
+    <PageShell background={PHOTOS.bazaar}>
       <PageHero
         kicker="Sights"
         title="Places to see"
         copy="Sixteen real stops across the UNESCO old city, the west bank, and the Neretva valley. Save the ones you want and they follow you into your trip list."
-        image={IMAGES.splitRight}
+        image={PHOTOS.koskiView}
       />
 
       <section className="mx-auto w-full max-w-6xl w-full px-4 py-12 sm:px-6 sm:py-16">
@@ -56,7 +56,7 @@ function PlacesPage() {
                 {items.map((place) => (
                   <article
                     key={place.slug}
-                    className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-card/50 backdrop-blur-sm transition-colors hover:border-foreground/30"
+                    className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-card/85 backdrop-blur-sm backdrop-blur-sm transition-colors hover:border-foreground/30"
                   >
                     <img
                       src={place.image}

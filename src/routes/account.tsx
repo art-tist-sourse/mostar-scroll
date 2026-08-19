@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { PageShell } from "@/components/PageShell";
-import { IMAGES, PLACES } from "@/lib/site-content";
+import { PHOTOS, PLACES } from "@/lib/site-content";
 
 export const Route = createFileRoute("/account")({
   head: () => ({
@@ -71,7 +71,7 @@ function AccountPage() {
   }
 
   return (
-    <PageShell background={IMAGES.splitLeft}>
+    <PageShell background={PHOTOS.krivaCuprija}>
       <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -93,7 +93,7 @@ function AccountPage() {
         {fetching ? (
           <p className="mt-12 text-sm text-muted-foreground">Loading your list…</p>
         ) : rows.length === 0 ? (
-          <div className="mt-12 rounded-3xl border border-border bg-card/40 p-10 text-center">
+          <div className="mt-12 rounded-3xl border border-border bg-card/85 backdrop-blur-sm p-10 text-center">
             <h2 className="font-display text-2xl">Nothing saved yet</h2>
             <p className="mt-3 text-sm text-muted-foreground">
               Bookmark the sights you want and they will appear here.
@@ -112,7 +112,7 @@ function AccountPage() {
               return (
                 <li
                   key={row.id}
-                  className="flex flex-col gap-4 rounded-3xl border border-border bg-card/40 p-6 sm:flex-row sm:items-start"
+                  className="flex flex-col gap-4 rounded-3xl border border-border bg-card/85 backdrop-blur-sm p-6 sm:flex-row sm:items-start"
                 >
                   {place ? (
                     <img src={place.image} alt="" className="h-24 w-32 rounded-2xl object-cover" />

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { SavePlaceButton } from "@/components/SavePlaceButton";
-import { IMAGES, PLACES } from "@/lib/site-content";
+import { PHOTOS, PLACES } from "@/lib/site-content";
 
 export const Route = createFileRoute("/bazaar")({
   head: () => ({
@@ -18,9 +18,9 @@ export const Route = createFileRoute("/bazaar")({
         content: "Coppersmiths, coffee and stone lanes in the old town beside the Old Bridge.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:image", content: IMAGES.bazaar },
+      { property: "og:image", content: PHOTOS.bazaar },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: IMAGES.bazaar },
+      { name: "twitter:image", content: PHOTOS.bazaar },
     ],
   }),
   component: BazaarPage,
@@ -49,12 +49,12 @@ function BazaarPage() {
   const bazaar = PLACES[1]!;
 
   return (
-    <PageShell background={IMAGES.bazaar}>
+    <PageShell background={PHOTOS.bazaar}>
       <PageHero
         kicker="Bazaar street"
         title="Kujundziluk"
         copy="Copper, coffee and cobble. The bazaar keeps Mostar close: everything worth seeing sits within a short walk of the arch."
-        image={IMAGES.bazaar}
+        image={PHOTOS.bazaar}
       >
         <SavePlaceButton slug={bazaar.slug} title={bazaar.title} />
         <Link
@@ -82,7 +82,7 @@ function BazaarPage() {
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {NOTES.map((note) => (
-            <article key={note.title} className="rounded-3xl border border-border bg-card/40 p-7">
+            <article key={note.title} className="rounded-3xl border border-border bg-card/85 backdrop-blur-sm p-7">
               <h3 className="font-display text-xl">{note.title}</h3>
               <p className="mt-3 text-sm text-muted-foreground">{note.copy}</p>
             </article>
@@ -90,7 +90,7 @@ function BazaarPage() {
         </div>
 
         <div className="mt-14 overflow-hidden rounded-3xl border border-border">
-          <img src={IMAGES.frameTwo} alt="Mostar old town rooftops above the Neretva" className="h-80 w-full object-cover" />
+          <img src={PHOTOS.panorama} alt="Mostar old town rooftops above the Neretva" className="h-80 w-full object-cover" />
         </div>
       </section>
     </PageShell>
