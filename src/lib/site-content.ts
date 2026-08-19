@@ -23,6 +23,55 @@ export const ICONS = {
     "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260730_230448_825949c9-ccdb-4857-b4a6-e349eccc9010.png",
 } as const;
 
+export const PHOTOS = {
+  bridge:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Mostar_Stari_Most_BW_2024-10-01_12-58-38.jpg/1920px-Mostar_Stari_Most_BW_2024-10-01_12-58-38.jpg",
+  bridgeNight:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Mostar%2C_Stari_Most_at_night.jpg/1920px-Mostar%2C_Stari_Most_at_night.jpg",
+  panorama:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Mostar_Old_Town_Panorama_2007.jpg/1920px-Mostar_Old_Town_Panorama_2007.jpg",
+  panoramaMosques:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Mostar_panorama_-_bridge_and_mosques.jpg/1920px-Mostar_panorama_-_bridge_and_mosques.jpg",
+  bazaar:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Kujundziluk_Mostar_06.jpg/1920px-Kujundziluk_Mostar_06.jpg",
+  bazaarLane:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Kujundziluk_Mostar_09.jpg/1920px-Kujundziluk_Mostar_09.jpg",
+  koskiMosque:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Koski_Mehmed_Pasha_Mosque%2C_Mostar_01.jpg/1920px-Koski_Mehmed_Pasha_Mosque%2C_Mostar_01.jpg",
+  koskiView:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Mostar_-_view_from_Koski_Mehmed_Pasha_Mosque.jpg/1920px-Mostar_-_view_from_Koski_Mehmed_Pasha_Mosque.jpg",
+  kajtazHouse:
+    "https://upload.wikimedia.org/wikipedia/commons/6/66/Kajtaz_Evi.jpg",
+  ottomanHouse:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/%22Casa_Otomana%22%2C_Mostar_12.jpg/1920px-%22Casa_Otomana%22%2C_Mostar_12.jpg",
+  biscevicHouse:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/%22Casa_Otomana%22%2C_Mostar_13.jpg/1920px-%22Casa_Otomana%22%2C_Mostar_13.jpg",
+  muslibegovicHouse:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Muslibegovic_House%2C_Mostar.jpg/1920px-Muslibegovic_House%2C_Mostar.jpg",
+  hammam:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Hamam_Museum%2C_Mostar_%2829771886881%29.jpg/1920px-Hamam_Museum%2C_Mostar_%2829771886881%29.jpg",
+  karadozMosque:
+    "https://upload.wikimedia.org/wikipedia/commons/9/9e/Karadjoz-Bey%27s_Mosque_1.jpg",
+  krivaCuprija:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/20201220_Mostar%2C_Kriva_%C4%87uprija_2.jpg/1920px-20201220_Mostar%2C_Kriva_%C4%87uprija_2.jpg",
+  towerMuseum:
+    "https://upload.wikimedia.org/wikipedia/commons/e/e9/The_Old_Bridge_Tower_1.jpg",
+  gymnasium:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Gimnazija_Mostar_2022-08.jpg/1920px-Gimnazija_Mostar_2022-08.jpg",
+  sniperTower:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Mostar_-_Ljubljanska_banka_%2849033182073%29.jpg/1920px-Mostar_-_Ljubljanska_banka_%2849033182073%29.jpg",
+  partisanCemetery:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Partisan_Memorial_Cemetery_in_Mostar%2C_2022.jpg/1920px-Partisan_Memorial_Cemetery_in_Mostar%2C_2022.jpg",
+  blagaj:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Tekija_Blagaj_-_Vrelo_Bune.jpg/1920px-Tekija_Blagaj_-_Vrelo_Bune.jpg",
+  pocitelj:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/JuPo%C4%8Ditelj.jpg/1920px-JuPo%C4%8Ditelj.jpg",
+  kravice:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Kravice_Waterfalls.jpg/1920px-Kravice_Waterfalls.jpg",
+  oldTown:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Mostar%2C_casco_antiguo_1.jpg/1920px-Mostar%2C_casco_antiguo_1.jpg",
+} as const;
+
 export type Place = {
   slug: string;
   kicker: string;
@@ -44,7 +93,7 @@ export const PLACES: Place[] = [
     title: "Stari Most",
     copy: "The stone arch over the Neretva and Mostar's main landmark.",
     pin: ICONS.one,
-    image: IMAGES.bridge,
+    image: PHOTOS.bridge,
     hours: "Open all day",
     price: "Free to cross",
     best: "Sunrise, or the hour before sunset",
@@ -60,7 +109,7 @@ export const PLACES: Place[] = [
     title: "Kujundziluk",
     copy: "Copper shops, souvenirs, and the old bazaar lane by the bridge.",
     pin: ICONS.two,
-    image: IMAGES.bazaar,
+    image: PHOTOS.bazaar,
     hours: "Shops roughly 09:00 – 20:00",
     price: "Free to wander",
     best: "Mid-morning, before the tour groups",
@@ -76,7 +125,7 @@ export const PLACES: Place[] = [
     title: "Koski Mehmed Pasha Mosque",
     copy: "A classic minaret view back toward Stari Most and the river.",
     pin: ICONS.three,
-    image: IMAGES.splitRight,
+    image: PHOTOS.koskiMosque,
     hours: "Daily, outside prayer times",
     price: "Small entry fee for courtyard and minaret",
     best: "Late afternoon light on the bridge",
@@ -92,7 +141,7 @@ export const PLACES: Place[] = [
     title: "Kajtaz House",
     copy: "A preserved residential house showing Mostar's Ottoman layers.",
     pin: ICONS.one,
-    image: IMAGES.splitLeft,
+    image: PHOTOS.kajtazHouse,
     hours: "Seasonal, generally 10:00 – 18:00",
     price: "Modest entry fee",
     best: "Quiet early afternoon",
@@ -108,7 +157,7 @@ export const PLACES: Place[] = [
     title: "War Photo Exhibition",
     copy: "A compact, moving stop for context on the city's recent history.",
     pin: ICONS.two,
-    image: IMAGES.frameTwo,
+    image: PHOTOS.towerMuseum,
     hours: "Daily in season, 10:00 – 18:00",
     price: "Ticket includes the Tara tower",
     best: "After you have crossed the bridge once",
@@ -124,7 +173,7 @@ export const PLACES: Place[] = [
     title: "Kriva Ćuprija",
     copy: "The small 1558 arch over the Radobolja, built as a trial run for Stari Most.",
     pin: ICONS.three,
-    image: IMAGES.splitLeft,
+    image: PHOTOS.krivaCuprija,
     hours: "Open all day",
     price: "Free",
     best: "Morning, from the café terraces below",
@@ -141,7 +190,7 @@ export const PLACES: Place[] = [
     title: "Karađoz Bey Mosque",
     copy: "Mostar's largest and most refined Ottoman mosque, from 1557.",
     pin: ICONS.two,
-    image: IMAGES.bazaar,
+    image: PHOTOS.karadozMosque,
     hours: "Daily outside prayer times",
     price: "Small entry donation",
     best: "Late morning",
@@ -158,7 +207,7 @@ export const PLACES: Place[] = [
     title: "Bišćević House",
     copy: "A 1635 Turkish house cantilevered straight over the Neretva.",
     pin: ICONS.one,
-    image: IMAGES.splitRight,
+    image: PHOTOS.biscevicHouse,
     hours: "Seasonal, roughly 09:00 – 18:00",
     price: "Modest entry fee",
     best: "Afternoon, for river light through the windows",
@@ -175,7 +224,7 @@ export const PLACES: Place[] = [
     title: "Muslibegović House",
     copy: "An 18th-century residence that doubles as a small heritage hotel.",
     pin: ICONS.two,
-    image: IMAGES.frameTwo,
+    image: PHOTOS.muslibegovicHouse,
     hours: "Tours daily in season",
     price: "Entry fee; free for guests",
     best: "Early evening",
@@ -192,7 +241,7 @@ export const PLACES: Place[] = [
     title: "Old Bazaar Hammam",
     copy: "A restored Ottoman bathhouse now used as a museum and gallery space.",
     pin: ICONS.three,
-    image: IMAGES.bazaar,
+    image: PHOTOS.hammam,
     hours: "Tue – Sun, 10:00 – 18:00",
     price: "Low entry fee",
     best: "Midday, when the domes are lit from above",
@@ -209,7 +258,7 @@ export const PLACES: Place[] = [
     title: "Spanish Square",
     copy: "Austro-Hungarian façades, the Gymnasium, and the city's civic heart.",
     pin: ICONS.one,
-    image: IMAGES.backFour,
+    image: PHOTOS.gymnasium,
     hours: "Open all day",
     price: "Free",
     best: "Golden hour on the yellow façades",
@@ -226,7 +275,7 @@ export const PLACES: Place[] = [
     title: "Bulevar and the Sniper Tower",
     copy: "The former front line, still scarred, ten minutes from the bridge.",
     pin: ICONS.two,
-    image: IMAGES.frameTwo,
+    image: PHOTOS.sniperTower,
     hours: "Street; walk in daylight",
     price: "Free",
     best: "Daylight, and with a local guide if you can",
@@ -243,7 +292,7 @@ export const PLACES: Place[] = [
     title: "Partisan Memorial Cemetery",
     copy: "A terraced 1965 modernist monument on the hillside above town.",
     pin: ICONS.three,
-    image: IMAGES.sky,
+    image: PHOTOS.partisanCemetery,
     hours: "Open, unstaffed",
     price: "Free",
     best: "Late afternoon",
@@ -260,7 +309,7 @@ export const PLACES: Place[] = [
     title: "Blagaj Tekke and Vrelo Bune",
     copy: "A dervish house under a 200 m cliff where the Buna river erupts.",
     pin: ICONS.one,
-    image: IMAGES.splitRight,
+    image: PHOTOS.blagaj,
     hours: "Daily, roughly 08:00 – 20:00 in season",
     price: "Small entry fee",
     best: "Morning, before the coach groups",
@@ -277,7 +326,7 @@ export const PLACES: Place[] = [
     title: "Počitelj",
     copy: "A stepped Ottoman village and fortress above the Neretva, 30 km south.",
     pin: ICONS.two,
-    image: IMAGES.splitLeft,
+    image: PHOTOS.pocitelj,
     hours: "Open all day",
     price: "Free; small fee for the tower",
     best: "Late afternoon light on the stone",
@@ -294,7 +343,7 @@ export const PLACES: Place[] = [
     title: "Kravice Waterfalls",
     copy: "A 25 m curtain of falls on the Trebižat, an hour from the city.",
     pin: ICONS.three,
-    image: IMAGES.bridge,
+    image: PHOTOS.kravice,
     hours: "Daily, 08:00 until dusk in season",
     price: "Entry fee, higher in summer",
     best: "May – June for volume; July – August for swimming",

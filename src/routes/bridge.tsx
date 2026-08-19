@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
 import { SavePlaceButton } from "@/components/SavePlaceButton";
-import { BRIDGE_FACTS, IMAGES, PLACES } from "@/lib/site-content";
+import { BRIDGE_FACTS, PHOTOS, PLACES } from "@/lib/site-content";
 
 export const Route = createFileRoute("/bridge")({
   head: () => ({
@@ -18,9 +18,9 @@ export const Route = createFileRoute("/bridge")({
         content: "The 1566 arch over the Neretva: history, timings, viewpoints and diving tradition.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:image", content: IMAGES.bridge },
+      { property: "og:image", content: PHOTOS.bridge },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: IMAGES.bridge },
+      { name: "twitter:image", content: PHOTOS.bridge },
     ],
   }),
   component: BridgePage,
@@ -30,12 +30,12 @@ function BridgePage() {
   const bridge = PLACES[0]!;
 
   return (
-    <PageShell background={IMAGES.bridge}>
+    <PageShell background={PHOTOS.bridge}>
       <PageHero
         kicker="The Old Bridge"
         title="Stari Most"
         copy="A single limestone arch, emerald water below, and the crossing that gives Mostar its name and its compass."
-        image={IMAGES.bridge}
+        image={PHOTOS.bridge}
       >
         <SavePlaceButton slug={bridge.slug} title={bridge.title} />
         <Link
@@ -67,7 +67,7 @@ function BridgePage() {
             </p>
           </div>
 
-          <dl className="h-fit rounded-3xl border border-border bg-card/60 p-7">
+          <dl className="h-fit rounded-3xl border border-border bg-card/90 backdrop-blur-sm p-7">
             <p className="mb-5 text-xs uppercase tracking-[0.28em] text-muted-foreground">Timeline</p>
             {BRIDGE_FACTS.map((fact) => (
               <div key={fact.term} className="border-b border-border/60 py-3 last:border-0">
@@ -93,7 +93,7 @@ function BridgePage() {
               copy: "Halebija and Tara bracket the span. Tara now holds the War Photo Exhibition — the best twenty minutes in the old city.",
             },
           ].map((card) => (
-            <article key={card.title} className="rounded-3xl border border-border bg-card/40 p-6">
+            <article key={card.title} className="rounded-3xl border border-border bg-card/85 backdrop-blur-sm p-6">
               <h3 className="font-display text-xl">{card.title}</h3>
               <p className="mt-3 text-sm text-muted-foreground">{card.copy}</p>
             </article>

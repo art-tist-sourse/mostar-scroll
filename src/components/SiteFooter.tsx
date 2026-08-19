@@ -3,7 +3,7 @@ import { SITE_NAME } from "@/lib/site-content";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border/60 bg-card/40">
+    <footer className="border-t border-border/60 bg-card/85 backdrop-blur-sm">
       <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-3">
         <div>
           <p className="font-display text-base uppercase tracking-[0.18em]">{SITE_NAME}</p>

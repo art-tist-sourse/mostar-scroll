@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
-import { IMAGES, ITINERARIES, PRACTICAL } from "@/lib/site-content";
+import { PHOTOS, ITINERARIES, PRACTICAL } from "@/lib/site-content";
 
 export const Route = createFileRoute("/itineraries")({
   head: () => ({
@@ -17,9 +17,9 @@ export const Route = createFileRoute("/itineraries")({
         content: "Timed routes through Mostar's old city, plus Blagaj, Pocitelj and Kravice.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: IMAGES.splitLeft },
+      { property: "og:image", content: PHOTOS.krivaCuprija },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: IMAGES.splitLeft },
+      { name: "twitter:image", content: PHOTOS.krivaCuprija },
     ],
   }),
   component: ItinerariesPage,
@@ -27,12 +27,12 @@ export const Route = createFileRoute("/itineraries")({
 
 function ItinerariesPage() {
   return (
-    <PageShell background={IMAGES.backFour}>
+    <PageShell background={PHOTOS.oldTown}>
       <PageHero
         kicker="Routes"
         title="Itineraries"
         copy="Three ways to walk Mostar, timed for light and crowds rather than checklists."
-        image={IMAGES.splitLeft}
+        image={PHOTOS.krivaCuprija}
       >
         <Link
           to="/auth"
@@ -45,7 +45,7 @@ function ItinerariesPage() {
       <section className="mx-auto max-w-6xl w-full px-4 py-12 sm:px-6 sm:py-16">
         <div className="space-y-10">
           {ITINERARIES.map((itinerary) => (
-            <article key={itinerary.slug} className="rounded-3xl border border-border bg-card/40 p-8">
+            <article key={itinerary.slug} className="rounded-3xl border border-border bg-card/85 backdrop-blur-sm p-8">
               <div className="flex flex-wrap items-baseline gap-4">
                 <h2 className="font-display text-3xl">{itinerary.title}</h2>
                 <span className="rounded-full border border-border px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">

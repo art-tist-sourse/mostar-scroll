@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHero } from "@/components/PageShell";
-import { IMAGES, PRACTICAL } from "@/lib/site-content";
+import { PHOTOS, PRACTICAL } from "@/lib/site-content";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -17,9 +17,9 @@ export const Route = createFileRoute("/about")({
         content: "The story behind this cinematic guide to Mostar and the Neretva valley.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: IMAGES.sky },
+      { property: "og:image", content: PHOTOS.panoramaMosques },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: IMAGES.sky },
+      { name: "twitter:image", content: PHOTOS.panoramaMosques },
     ],
   }),
   component: AboutPage,
@@ -27,12 +27,12 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <PageShell background={IMAGES.backFour}>
+    <PageShell background={PHOTOS.oldTown}>
       <PageHero
         kicker="Bosnia and Herzegovina"
         title="About this guide"
         copy="One city, told slowly: a scroll story on the front page and a working guide behind it."
-        image={IMAGES.sky}
+        image={PHOTOS.panoramaMosques}
       />
 
       <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
@@ -59,7 +59,7 @@ function AboutPage() {
 
         <dl className="mt-12 grid gap-6 sm:grid-cols-2">
           {PRACTICAL.map((item) => (
-            <div key={item.term} className="rounded-3xl border border-border bg-card/40 p-6">
+            <div key={item.term} className="rounded-3xl border border-border bg-card/85 backdrop-blur-sm p-6">
               <dt className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
                 {item.term}
               </dt>
